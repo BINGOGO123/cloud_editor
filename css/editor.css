@@ -1,0 +1,35 @@
+#path
+{
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    width:100%;
+}
+
+#path .left-div
+{
+    width:250px;
+    flex:none;
+    position: relative;
+    z-index:3;
+}
+
+#path .right-div
+{
+    flex:1;
+    position: relative;
+    z-index:2;
+    width:0;
+}
+
+body
+{
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+html
+{
+    height:100%;
+}

@@ -1,0 +1,126 @@
+/* 文件与目录组件 */
+.grade
+{
+    height:26px;
+    line-height:26px;
+}
+.inline-dir-name,.file-dir
+{
+    display:flex;
+    justify-content: space-between;
+    overflow:hidden;
+    overflow:hidden;
+    position: relative;
+}
+.inline-dir-name::after,.file-dir::after
+{
+    width:10px;
+    position: absolute;
+    top:0;
+    right:0;
+    height:40px;
+    content:"";
+}
+.inline-dir-name:hover,.file-dir:hover
+{
+    background-color:rgb(229, 233, 243);
+}
+.inline-dir-name.focus,.file-dir.focus
+{
+    background-color:rgb(213, 238, 237);
+}
+.inline-dir-name button,.file-dir button
+{
+    cursor:pointer;
+    border:none;
+    outline:none;
+    background-color:transparent;
+    display:none;
+}
+.inline-dir-name:hover button,.file-dir:hover button
+{
+    display:inline-block;
+}
+.inline-dir-name button.delete i,.file-dir button.delete i
+{
+    color:rgb(240, 148, 148);
+}
+.inline-dir-name button.delete:hover i,.file-dir button.delete:hover i
+{
+    color:rgb(199, 44, 44);
+}
+.inline-dir-name button.rename i,.file-dir button.rename i
+{
+    color:rgb(148, 240, 168);
+}
+.inline-dir-name button.rename:hover i,.file-dir button.rename:hover i
+{
+    color:rgb(43, 177, 72);
+}
+.inline-dir-name-display,.file-dir-name
+{
+    /* padding-right:10px; */
+    color:rgb(75, 75, 75);
+    font-family: "Verdana";
+    white-space:nowrap;
+}
+.inline-dir-name:hover .inline-dir-name-display,.file-dir:hover .file-dir-name
+{
+    overflow:hidden;
+}
+.operate-display
+{
+    width:60px;
+}
+
+/* file-system组件的css结构 */
+.file-system
+{
+    background-color:rgb(249, 252, 255);
+    height:100%;
+    box-shadow:0 0 3px rgb(204, 211, 218);
+}
+
+/* 根目录组件 */
+.root-dir
+{
+    cursor:pointer;
+    -webkit-user-select:none;
+}
+
+.root-dir .fa
+{
+    width:12px;
+    color:rgb(65, 87, 148);
+    text-align:center;
+    font-size:0.9rem;
+    position: relative;
+    bottom:1px;
+}
+
+/* 文件操作选项组件 */
+.operate-dir
+{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+    padding-top:6px;
+    padding-bottom:6px;
+    background-color:rgba(223, 231, 255, 0.6);
+}
+
+.operate-dir button
+{
+    cursor:pointer;
+    border:none;
+    outline:none;
+    background-color:transparent;
+    color:gray;
+    font-size:0.7rem;
+}
+
+.operate-dir button:hover
+{
+    color:black;
+}

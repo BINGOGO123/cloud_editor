@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8" />
+        <title>云文件夹</title>
+        <script src="vue/vue.js"></script>
+        <script src="component/text.js"></script>
+        <script src="component/dir.js"></script>
+        <script src="component/model.js"></script>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="component/dir.css" />
+        <link rel="stylesheet" href="component/text.css" />
+        <link rel="stylesheet" href="component/model.css" />
+        <link rel="stylesheet" href="css/editor.css" />
+        <link type="image/x-icon" rel="icon" href="images/logo.png" />
+    </head>
+    <body>
+        <div id="path">
+            <file-system
+            :list="list"
+            :delete-url="deleteUrl"
+            :re-name-url="reNameUrl"
+            :create-url="createUrl"
+            :focus-item="focusItem"
+            class="left-div"
+            ></file-system>
+            <editor-system
+            :file-list="fileList"
+            :focus="focus"
+            class="right-div"
+            ></editor-system>
+            <model-div
+            v-if="modelDiv.show"
+            :type="modelDiv.type"
+            :button-list="modelDiv.buttonList"
+            :align="modelDiv.align"
+            :start="modelDiv.show"
+            v-model="modelDiv.value"
+            @choose="choose"
+            @ensure="ensure"
+            >{{modelDiv.info}}</model-div>
+        </div>
+        <script src="js/editor.js"></script>
+    </body>
+</html>
+
+<!--
+    文件名超长
+    文件目录超长
+    打开的文件数目超多，原来flex布局则子部件会超出去无线增长，对子部件加了width:0;就解决了（已解决）
+    打开的文件删除图标自动变为鼠标覆盖时候的样式（已解决）
+    文本编辑器一直都是焦点状态（不需解决）
+    模态框弹出之后要处于焦点状态（已解决）
+    文件排序好像是反的（已解决）
+    新建文件应该立即打开才对（已解决）
+    创建文件或者修改名称的时候好像有时候会出现路径遍历错误的问题
+-->
+
+<!--
+    关于vue的几个问题：
+    1.array中直接给某个元素赋值是不会触发相应的，如果array中的某个元素是对象，然后直接更改对象中的属性会触发么：会的
+    2.假设通过组件传入一个数组，然后组件内部会对数组创建各个状态，也形成一个数组，那么当外面修改数组（插入、删除），内部组件也应该删除消失元素的状态量（这个如何实现）
+    也应该增加元素的状态量（如何实现）。主要问题是不知道新加入的和删除的到底是数组中的哪个元素，因为其元素不一定有唯一性标识。
+-->

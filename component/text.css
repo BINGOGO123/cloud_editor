@@ -1,0 +1,151 @@
+.text-nav
+{
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    flex:none;
+    align-items: center;
+    height:30px;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    flex:1;
+}
+
+.text-bar
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow:0 0 3px rgb(200,200,200);
+    z-index:3;
+}
+
+/* 设置滚动条的样式 */
+.text-nav::-webkit-scrollbar
+{
+    height:2px;
+    /* background-color:rgba(253, 234, 199, 0.5); */
+    /* border-radius:0 0 10px 0; */
+}
+.text-nav::-webkit-scrollbar-thumb
+{
+    /* border-radius:10px; */
+    background-color:rgb(200, 213, 236);
+}
+
+.text-nav-operate
+{
+    padding-left:10px;
+    padding-right:10px;
+    color:gray;
+    cursor: pointer;
+    -webkit-user-select: none;
+    color:rgb(185, 197, 223);
+}
+
+.text-nav-operate:hover
+{
+    color:rgb(69, 110, 199);
+}
+
+.text-nav-item
+{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding-left:10px;
+    padding-right:10px;
+    height:30px;
+    line-height: 30px;
+    align-items: center;
+    /* box-shadow:0 0 3px red; */
+    cursor:pointer;
+    -webkit-user-select:none;
+    /* box-shadow:1px -1px 1px rgb(200,200,200); */
+    /* border-right:solid 1px rgba(206, 206, 206, 0.6); */
+    background-color:rgba(240, 246, 255, 0.6);
+    /* width:100px; */
+    font-family: "Verdana";
+    margin-right:2px;
+    flex-shrink:0;
+}
+.text-nav-item.focus
+{
+    background-color:rgba(212, 229, 255, 0.6);
+}
+.text-nav-item.saved
+{
+    color:rgb(211, 44, 44);
+}
+
+.text-nav-item-name
+{
+    padding-right:10px;
+}
+
+.text-nav-item .fa
+{
+    font-size:1.1rem;
+    color:rgb(88, 88, 88);
+    margin-left:10px;
+    width:20px;
+    flex:none;
+}
+.text-nav-item .fa:hover
+{
+    color:rgb(235, 84, 84);
+}
+
+/* .text-nav-item .fa
+{
+    display:none;
+}
+.text-nav-item:hover .fa
+{
+    display:block;
+} */
+
+.editor-system
+{
+    display:flex;
+    flex-direction: column;
+
+}
+
+.editor-area
+{
+    flex:1;
+    border:none;
+    outline:none;
+    font-family: "Verdana";
+    padding:10px;
+    resize:none;
+    font-size:1.1rem;
+}
+
+.empty-alert
+{
+    text-align:center;
+    font-size:1.2rem;
+    color:rgb(45, 124, 189);
+    font-family: "Verdana";
+    margin-top:10px;
+}
+
+.model-display-input
+{
+    font-family: "Verdana";
+    font-size:1rem;
+    display:block;
+    margin-bottom:15px;
+    outline:none;
+    border:none;
+    width:98%;
+    padding:4px;
+    box-shadow:0 0 1px rgb(200,200,200);
+}
+.model-display-input:focus
+{
+    box-shadow:0 0 3px rgb(138, 156, 197);
+}
